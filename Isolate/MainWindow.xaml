@@ -1,0 +1,21 @@
+﻿<Window x:Class="Isolate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Isolate"
+        xmlns:properties="clr-namespace:Isolate.Properties"
+        mc:Ignorable="d"
+        Title="多言語機能サンプル" Height="400" Width="400">
+    <Window.Resources>
+        <!-- Resourcesに登録しておく -->
+        <properties:Resources x:Key="resources" />
+    </Window.Resources>
+    <Grid>
+        <!-- Resource.Embbedder をNugetでインポートするとサテライトファイルがexeに組み込まれる -->
+        <Button Width="50" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Content="日本語" Click="Button_Click_1"></Button>
+        <Button Width="50" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Content="英語" Margin="60,0,0,0" Click="Button_Click_2"></Button>
+        <Button Width="50" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Content="中国語" Margin="120,0,0,0" Click="Button_Click_3"></Button>
+        <Button Content="{Binding Source={StaticResource resources}, Path=ButtonText}" Width="50" Height="50" Click="Button_Click" Name="button1"></Button>
+    </Grid>
+</Window>
